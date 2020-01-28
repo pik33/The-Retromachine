@@ -59,8 +59,13 @@ if fileexists(drive+'\ultibo\Raspbian.u') then
   RenameFile(drive+'config_l.txt',drive+'config.txt');
   RenameFile(drive+'cmdline.txt',drive+'cmdline.u');
   RenameFile(drive+'cmdline.l',drive+'cmdline.txt');
-  systemrestart(3);
   end;
 
+initmachine(16);
+cls(148);
+outtextxyz(100,100,'Initial test',154,4,4);
+sleep(10000);
+
+systemrestart(1);
 end.
 

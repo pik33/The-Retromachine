@@ -418,8 +418,8 @@ var fh,filetype:integer;                // this needs cleaning...
     outbufidx:integer=0;
     framesize:integer;
     backgroundaddr:integer=mainscreen;
-    screenaddr:integer=mainscreen+$800000;
-    redrawing:integer=mainscreen+$800000;
+    screenaddr:integer=mainscreen;//+$800000;
+    redrawing:integer= mainscreen;//+$800000;
     windowsdone:boolean=false;
     drive:string;
 
@@ -758,8 +758,8 @@ repeat
   vblank1:=0;
   t:=gettime;
 
-  scrconvertnative(pointer(mainscreen+$800000),p2);   //8
-  screenaddr:=mainscreen+$800000;
+  scrconvertnative(pointer(mainscreen{+$800000}),p2);   //8
+  screenaddr:=mainscreen;//+$800000;
 
   tim:=gettime-t;
   t:=gettime;
@@ -776,8 +776,8 @@ repeat
   vblank1:=0;
   t:=gettime;
 
-  scrconvertnative(pointer(mainscreen+$b00000),p2+(xres+64)*(yres{+32}));   //a
-  screenaddr:=mainscreen+$b00000;
+  scrconvertnative(pointer(mainscreen{+$b00000}),p2+(xres+64)*(yres{+32}));   //a
+  screenaddr:=mainscreen;//+$b00000;
 
   tim:=gettime-t;
   t:=gettime;
